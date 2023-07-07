@@ -25,12 +25,15 @@ app.get('/livros', async (req, res) => {
     }
 })
 
-
-app.get('/livros/:id', (req, res) => {
-    const index = buscaLivro(req.params.id);
-    res.json(livros[index]);
+app.get("/livros/:id", async (req, res) => {
+    try {
+        const livroEncontrado = await livros.findById(req.params.id);
+        res.status(200).json(livroEncontrado);
+    }
+    catch (error) {
+        res.status(500).json({ error: error.message })
+    }
 })
-
 
 app.post('/livros', (req, res) => {
     const livro = req.body;
@@ -39,7 +42,6 @@ app.post('/livros', (req, res) => {
 })
 
 app.put('/livros/:id', (req, res) => {
-    const index = buscaLivro(req.params.id);
     livros[index] = req.body;
     console.log(livros);
     res.status(200).json("Livro atualizada");
@@ -48,19 +50,15 @@ app.put('/livros/:id', (req, res) => {
 
 app.delete('/livros/:id', (req, res) => {
     const { id } = req.params;
-    const index = buscaLivro(id);
     livros.splice(index, 1);
     res.send("Livro deletado");
 });
 
 app.patch('/livros/:id', (req, res) => {
     const { id } = req.params;
-    const index = buscaLivro(id);
     livros[index] = req.body;
     res.send("Livro atualizado");
 });
 
-function buscaLivro(id) {
-    return livros.findIndex(livro => livro.id == id);
-}
+
 export default app;
