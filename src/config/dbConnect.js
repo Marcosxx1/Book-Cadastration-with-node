@@ -1,3 +1,3 @@
 import mongoose from 'mongoose';
 
-mongoose.connect('s');
+mongoose.connect('');
