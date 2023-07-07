@@ -43,7 +43,7 @@ app.delete('/livros/:id', (req, res) => {
     const index = buscaLivro(id);
     livros.splice(index, 1);
     res.send("Livro deletado");
-})
+});
 
 function buscaLivro(id) {
     return livros.findIndex(livro => livro.id == id);
