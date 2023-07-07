@@ -45,6 +45,13 @@ app.delete('/livros/:id', (req, res) => {
     res.send("Livro deletado");
 });
 
+app.patch('/livros/:id', (req, res) => {
+    const { id } = req.params;
+    const index = buscaLivro(id);
+    livros[index] = req.body;
+    res.send("Livro atualizado");
+});
+
 function buscaLivro(id) {
     return livros.findIndex(livro => livro.id == id);
 }
