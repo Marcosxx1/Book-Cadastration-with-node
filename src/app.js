@@ -35,10 +35,14 @@ app.get("/livros/:id", async (req, res) => {
     }
 })
 
-app.post('/livros', (req, res) => {
+app.post('/livros', async (req, res) => {
     const livro = req.body;
-    livros.push(livro);
-    res.status(201).json("Livro cadastrada");
+
+    const novoLivro = new livros(livro);
+
+    await novoLivro.save();
+    res.status(201).json("Livro cadastrado");
+
 })
 
 app.put('/livros/:id', (req, res) => {
