@@ -2,6 +2,37 @@
 
 This is a sample Node.js Express API project that uses MongoDB for data storage. It provides CRUD (Create, Read, Update, Delete) operations for managing Livro (book) entities.
 
+<details>
+<summary>FileTree</summary>
+
+```coffeescript
+Node.js-API-Rest-com-Express-e-MongoDB-/
+┣ .vscode/
+┃ ┗ settings.json
+┣ src/
+┃ ┣ config/
+┃ ┃ ┗ dbConnect.js
+┃ ┣ controller/
+┃ ┃ ┗ livrosController.js
+┃ ┣ models/
+┃ ┣ repository/
+┃ ┃ ┗ LivroRepository.js
+┃ ┣ routes/
+┃ ┃ ┣ index.js
+┃ ┃ ┗ livrosRoutes.js
+┃ ┣ schemas/
+┃ ┃ ┗ Livro.js
+┃ ┣ services/
+┃ ┃ ┗ LivroServices.js
+┃ ┗ app.js
+┣ .gitignore
+┣ package-lock.json
+┣ package.json
+┣ README.md
+┗ server.js
+```
+</details>
+
 ## Requirements
 
 - Node.js (v12 or higher)
@@ -12,7 +43,7 @@ This is a sample Node.js Express API project that uses MongoDB for data storage.
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/your-username/your-repo.git
+   git clone [https://github.com/your-username/your-repo.git](https://github.com/Marcosxx1/Node.js-API-Rest-com-Express-e-MongoDB-.git)
 
 2. Install dependencies:
  ```shell
@@ -153,7 +184,8 @@ export default db;
 {
   "message": "Livro removido com sucesso"
 }
-
-
-
 ```
+
+<details><summary>Contribution?</summary>
+You're wellcome!
+</details>
