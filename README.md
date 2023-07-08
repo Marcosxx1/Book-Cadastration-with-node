@@ -1,3 +1,8 @@
+
+# Título do Projeto
+
+Uma breve descrição sobre o que esse projeto faz e para quem ele é
+
 # Node.js Express API with MongoDB
 
 This is a sample Node.js Express API project that uses MongoDB for data storage. It provides CRUD (Create, Read, Update, Delete) operations for managing Livro (book) entities.
@@ -43,17 +48,17 @@ export default db;
 ## The API will be available at http://localhost:3000.
 
 #API Endpoints
-[x]GET /livros: Get all livros
-[x]GET /livros/:id: Get a livro by ID
-[x]POST /livros: Create a new livro
-[x]PATCH /livros/:id: Update a livro by ID
-[x]DELETE /livros/:id: Delete a livro by ID
+- GET /livros: Get all livros
+- GET /livros/:id: Get a livro by ID
+- POST /livros: Create a new livro
+- PATCH /livros/:id: Update a livro by ID
+- DELETE /livros/:id: Delete a livro by ID
 
 ## Examples
-# Get all livros
-# Request: GET /livros
+### Get all livros
+#### Request: GET /livros
 
-# Response
+#### Response
 ```json 
 
 [
@@ -75,8 +80,8 @@ export default db;
 
 ```
 
-## Create a new livro
-# Request: POST /livros
+### Create a new livro
+### Request: POST /livros
 
 ```json
 
@@ -88,7 +93,7 @@ export default db;
 }
 
 ```
-# Response
+### Response
 ```json
 
 {
@@ -102,9 +107,9 @@ export default db;
 ```
 
 ## Get a livro by ID
-# Request GET /livros/{id}
+### Request GET /livros/{id}
 
-# Response
+### Response
 
 ```json
 {
@@ -116,8 +121,8 @@ export default db;
 }
 ```
 
-## Update a livro by ID
-# Requst PUT /livros/{id}
+### Update a livro by ID
+### Requst PUT /livros/{id}
 
 ```json
 {
@@ -126,7 +131,7 @@ export default db;
 }
 ```
 
-# Response 
+### Response 
 ```json 
 
 {
@@ -138,15 +143,15 @@ export default db;
 }
 
 ```
-## Delete a livro by ID
-# Request DELETE /livros/1
+### Delete a livro by ID
+### Request DELETE /livros/1
 ```json
 {
   "message": "Livro removido com sucesso"
 }
 
 ```
-# Response:
+### Response:
 
 ```json
 
