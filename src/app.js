@@ -1,5 +1,5 @@
 import db from './config/dbConnect.js';
-import routes from './routes/index.js';
+import routes from "./models/routes/index.js";
 import express from 'express';
 
 db.on("error", console.log.bind(console, "Erro de conexão"));

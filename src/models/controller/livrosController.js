@@ -13,9 +13,13 @@ export class LivroController {
 	static buscarLivroPorId = async (req, res) => {
 		try {
 			const livroEncontrado = await LivroService.getLivroById(req.params.id);
-			res.status(200).json(livroEncontrado);
+			if (livroEncontrado) {
+				res.status(200).json(livroEncontrado);
+			} else {
+				res.status(400).json({ error: "Livro não encontrado" });
+			}
 		} catch (error) {
-			res.status(404).json({ message: error.message });
+			res.status(500).json({ error: error.message });
 		}
 	};
 
@@ -33,7 +37,7 @@ export class LivroController {
 			await LivroService.deleteLivro(req.params.id);
 			res.status(200).json({ message: "Livro removido com sucesso" });
 		} catch (error) {
-			res.status(404).json({ message: error.message });
+			res.status(404).json({ error: error.message });
 		}
 	};
 
@@ -45,7 +49,7 @@ export class LivroController {
 			);
 			res.status(200).json(livroAtualizado);
 		} catch (error) {
-			res.status(404).json({ message: error.message });
+			res.status(404).json({ error: error.message });
 		}
 	};
 }

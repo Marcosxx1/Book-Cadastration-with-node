@@ -1,5 +1,4 @@
 import Livro from "../schemas/Livro.js";
-
 export class LivroRepository {
 	static getAllLivros = async () => {
 		return Livro.find();
