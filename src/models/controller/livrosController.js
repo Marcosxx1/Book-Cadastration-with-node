@@ -1,4 +1,5 @@
 import LivroService from "../services/LivroServices.js";
+import errorHandler from "../../helpers/errorHandler.js";
 
 export class LivroController {
 	static listarLivros = async (req, res) => {
@@ -6,7 +7,7 @@ export class LivroController {
 			const livrosEncontrados = await LivroService.getAllLivros();
 			res.status(200).json(livrosEncontrados);
 		} catch (error) {
-			res.status(500).json({ error: error.message });
+			errorHandler(error, res);
 		}
 	};
 
@@ -19,7 +20,7 @@ export class LivroController {
 				res.status(400).json({ error: "Livro não encontrado" });
 			}
 		} catch (error) {
-			res.status(500).json({ error: error.message });
+			errorHandler(error, res);
 		}
 	};
 
@@ -28,7 +29,7 @@ export class LivroController {
 			const novoLivro = await LivroService.createLivro(req.body);
 			res.status(201).json(novoLivro);
 		} catch (error) {
-			res.status(500).json({ error: error.message });
+			errorHandler(error, res);
 		}
 	};
 
@@ -37,7 +38,7 @@ export class LivroController {
 			await LivroService.deleteLivro(req.params.id);
 			res.status(200).json({ message: "Livro removido com sucesso" });
 		} catch (error) {
-			res.status(404).json({ error: error.message });
+			errorHandler(error, res);
 		}
 	};
 
@@ -49,7 +50,7 @@ export class LivroController {
 			);
 			res.status(200).json(livroAtualizado);
 		} catch (error) {
-			res.status(404).json({ error: error.message });
+			errorHandler(error, res);
 		}
 	};
 }
