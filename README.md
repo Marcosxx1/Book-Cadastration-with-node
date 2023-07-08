@@ -58,7 +58,7 @@ Node.js-API-Rest-com-Express-e-MongoDB-/
   mkdir config
    ```
 
-3.1 Inside the config folder paste this:
+3.1 Inside the config folder create a file named *dbConnect.js* and paste this:
   ```javascript  
   import mongoose from "mongoose";
 
