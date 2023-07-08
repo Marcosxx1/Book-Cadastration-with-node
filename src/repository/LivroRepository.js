@@ -1,4 +1,4 @@
-import Livro from "../models/Livro.js";
+import Livro from "../schemas/Livro.js";
 
 export class LivroRepository {
 	static getAllLivros = async () => {

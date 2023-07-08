@@ -1,4 +1,4 @@
-import LivroRepository from "../repositories/LivroRepository.js";
+import LivroRepository from "../repository/LivroRepository.js";
 
 export class LivroService {
 	static getAllLivros = async () => {
