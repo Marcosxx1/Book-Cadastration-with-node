@@ -1,8 +1,3 @@
-
-# Título do Projeto
-
-Uma breve descrição sobre o que esse projeto faz e para quem ele é
-
 # Node.js Express API with MongoDB
 
 This is a sample Node.js Express API project that uses MongoDB for data storage. It provides CRUD (Create, Read, Update, Delete) operations for managing Livro (book) entities.
@@ -45,7 +40,7 @@ export default db;
     npm start
 ```
 
-## The API will be available at http://localhost:3000.
+### The API will be available at http://localhost:3000.
 
 #API Endpoints
 - GET /livros: Get all livros
