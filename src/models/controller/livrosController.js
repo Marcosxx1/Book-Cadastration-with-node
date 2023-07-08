@@ -7,7 +7,7 @@ export class LivroController {
 			const livrosEncontrados = await LivroService.getAllLivros();
 			res.status(200).json(livrosEncontrados);
 		} catch (error) {
-			errorHandler(error, res);
+			errorHandler(res, error);
 		}
 	};
 
@@ -20,7 +20,7 @@ export class LivroController {
 				res.status(400).json({ error: "Livro não encontrado" });
 			}
 		} catch (error) {
-			errorHandler(error, res);
+			errorHandler(res, error);
 		}
 	};
 
@@ -29,7 +29,7 @@ export class LivroController {
 			const novoLivro = await LivroService.createLivro(req.body);
 			res.status(201).json(novoLivro);
 		} catch (error) {
-			errorHandler(error, res);
+			errorHandler(res, error);
 		}
 	};
 
@@ -38,7 +38,7 @@ export class LivroController {
 			await LivroService.deleteLivro(req.params.id);
 			res.status(200).json({ message: "Livro removido com sucesso" });
 		} catch (error) {
-			errorHandler(error, res);
+			errorHandler(res, error);
 		}
 	};
 
@@ -50,7 +50,7 @@ export class LivroController {
 			);
 			res.status(200).json(livroAtualizado);
 		} catch (error) {
-			errorHandler(error, res);
+			errorHandler(res, error);
 		}
 	};
 }
