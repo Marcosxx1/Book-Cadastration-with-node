@@ -20,7 +20,7 @@ export class LivroService {
 	static deleteLivro = async id => {
 		const livroRemovido = await LivroRepository.deleteLivro(id);
 		if (!livroRemovido) {
-			throw new Error("Livro not found");
+			throw new Error("Book not found");
 		}
 		return livroRemovido;
 	};
@@ -28,7 +28,7 @@ export class LivroService {
 	static updateLivro = async (id, livroData) => {
 		const livroAtualizado = await LivroRepository.updateLivro(id, livroData);
 		if (!livroAtualizado) {
-			throw new Error("Livro not found");
+			throw new Error("Book not found");
 		}
 		return livroAtualizado;
 	};

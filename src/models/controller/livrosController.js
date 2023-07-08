@@ -17,7 +17,7 @@ export class LivroController {
 			if (livroEncontrado) {
 				res.status(200).json(livroEncontrado);
 			} else {
-				res.status(400).json({ error: "Livro não encontrado" });
+				res.status(400).json({ error: "Book not found" });
 			}
 		} catch (error) {
 			errorHandler(res, error);
@@ -36,7 +36,7 @@ export class LivroController {
 	static apagarLivro = async (req, res) => {
 		try {
 			await LivroService.deleteLivro(req.params.id);
-			res.status(200).json({ message: "Livro removido com sucesso" });
+			res.status(200).json({ message: "Book removed successfully" });
 		} catch (error) {
 			errorHandler(res, error);
 		}
