@@ -12,18 +12,20 @@ Node.js-API-Rest-com-Express-e-MongoDB-/
 ┣ src/
 ┃ ┣ config/
 ┃ ┃ ┗ dbConnect.js
-┃ ┣ controller/
-┃ ┃ ┗ livrosController.js
+┃ ┣ helpers/
+┃ ┃ ┗ errorHandler.js
 ┃ ┣ models/
-┃ ┣ repository/
-┃ ┃ ┗ LivroRepository.js
-┃ ┣ routes/
-┃ ┃ ┣ index.js
-┃ ┃ ┗ livrosRoutes.js
-┃ ┣ schemas/
-┃ ┃ ┗ Livro.js
-┃ ┣ services/
-┃ ┃ ┗ LivroServices.js
+┃ ┃ ┣ controller/
+┃ ┃ ┃ ┗ livrosController.js
+┃ ┃ ┣ repository/
+┃ ┃ ┃ ┗ LivroRepository.js
+┃ ┃ ┣ routes/
+┃ ┃ ┃ ┣ index.js
+┃ ┃ ┃ ┗ livrosRoutes.js
+┃ ┃ ┣ schemas/
+┃ ┃ ┃ ┗ Livro.js
+┃ ┃ ┗ services/
+┃ ┃   ┗ LivroServices.js
 ┃ ┗ app.js
 ┣ .gitignore
 ┣ package-lock.json
