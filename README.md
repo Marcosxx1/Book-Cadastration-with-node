@@ -53,7 +53,9 @@ Node.js-API-Rest-com-Express-e-MongoDB-/
 
 3. Create a folder named config inside src
   ```shell
-  cd src mkdir config
+  cd src
+  mkdir config
+   ```
 
 3.1 Inside the config folder paste this:
   ```javascript  
