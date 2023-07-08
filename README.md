@@ -41,10 +41,9 @@ Node.js-API-Rest-com-Express-e-MongoDB-/
 ## Getting Started
 
 1. Clone the repository:
-
-   ```shell
-   git clone https://github.com/Marcosxx1/Node.js-API-Rest-com-Express-e-MongoDB-.git
-
+```shell
+  git clone https://github.com/Marcosxx1/Node.js-API-Rest-com-Express-e-MongoDB-.git
+```
 2. Install dependencies:
  ```shell
   cd your-repo
