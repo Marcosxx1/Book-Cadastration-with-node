@@ -1,6 +1,6 @@
 # Node.js Express API with MongoDB
 
-This is a sample Node.js Express API project that uses MongoDB for data storage. It provides CRUD (Create, Read, Update, Delete) operations for managing Livro (book) entities.
+This is a sample Node.js Express API project that uses MongoDB for data storage. It provides CRUD (Create, Read, Update, Delete) operations for managing books entities.
 
 <details>
 <summary>FileTree</summary>
@@ -73,90 +73,102 @@ export default db;
   ```shell
     npm start
 ```
+After running *npm start* the following message should appear 
+```shell
+  Server is up on port 3000
+  Successfuly connected to database
+```
 
 ### The API will be available at http://localhost:3000.
+#### Every field is required, and not filling one or multiple won't allow cadastration
 
-#API Endpoints
-- GET /livros: Get all livros
-- GET /livros/:id: Get a livro by ID
-- POST /livros: Create a new livro
-- PATCH /livros/:id: Update a livro by ID
-- DELETE /livros/:id: Delete a livro by ID
+### API Endpoints
+- GET /books: Get all books
+- GET /books/:id: Get a books by ID
+- POST /books: Create a new books
+- PATCH /books/:id: Update a books by ID
+- DELETE /books/:id: Delete a books by ID
 
 ## Examples
-### Get all livros
-#### Request: GET /livros
+
+### Create a new book
+### Request: POST /books
+
+```json
+
+{
+	"title": "Title ",
+	"author": "Author's name",
+	"publisher": "Publisher's name",
+	"numPag": 12,
+	"_id": "64a9e79d5201ba804f8d508f",
+	"__v": 0
+}
+
+```
+### Response
+```json
+
+{
+	"title": "Title ",
+	"author": "Author's nmae",
+	"publisher": "Publisher's name",
+	"numPag": 12,
+	"_id": "64a9e79d5201ba804f8d508f",
+	"__v": 0
+}
+
+```
+
+### Get all books
+#### Request: GET /books
 
 #### Response
 ```json 
 
 [
-  {
-    "id": "1",
-    "titulo": "Livro 1",
-    "autor": "Autor 1",
-    "editora": "Editora 1",
-    "numPagina": 200
-  },
-  {
-    "id": "2",
-    "titulo": "Livro 2",
-    "autor": "Autor 2",
-    "editora": "Editora 2",
-    "numPagina": 150
-  }
+{
+	"title": "Title ",
+	"author": "Author's name",
+	"publisher": "Publisher's name",
+	"numPag": 12,
+	"_id": "64a9e79d5201ba804f8d508f",
+	"__v": 0
+}
 ]
 
 ```
 
-### Create a new livro
-### Request: POST /livros
-
-```json
-
-{
-  "titulo": "Livro 3",
-  "autor": "Autor 3",
-  "editora": "Editora 3",
-  "numPagina": 180
-}
-
-```
-### Response
-```json
-
-{
-  "id": "3",
-  "titulo": "Livro 3",
-  "autor": "Autor 3",
-  "editora": "Editora 3",
-  "numPagina": 180
-}
-
-```
-
-## Get a livro by ID
-### Request GET /livros/{id}
-
+## Get a book by ID
+### Request GET /book/{id}
+#### GET /book/64a9e79d5201ba804f8d508f
 ### Response
 
 ```json
 {
-  "id": "1",
-  "titulo": "Livro 1",
-  "autor": "Autor 1",
-  "editora": "Editora 1",
-  "numPagina": 200
+	"_id": "64a9e79d5201ba804f8d508f",
+	"title": "Title ",
+	"author": "Author's nmae",
+	"publisher": "Publisher's name",
+	"numPag": 12,
+	"__v": 0
 }
 ```
 
-### Update a livro by ID
-### Requst PUT /livros/{id}
+### Update a book by ID
+#### You can update any field, respecting the requirements
+### Requst PATCH /book/{id}
+
+### Requst PATCH /book/64a9e79d5201ba804f8d508f
 
 ```json
 {
-  "titulo": "Livro 1 (Updated)",
-  "numPagina": 220
+	"_id": "64a9e79d5201ba804f8d508f",
+	"title": "Title ",
+	"author": "Author's nmae",
+	"publisher": "Publisher's name",
+	"numPag": 12,
+	"__v": 0
 }
 ```
 
@@ -164,28 +176,24 @@ export default db;
 ```json 
 
 {
-  "id": "1",
-  "titulo": "Livro 1 (Updated)",
-  "autor": "Autor 1",
-  "editora": "Editora 1",
-  "numPagina": 220
+	"_id": "64a9e79d5201ba804f8d508f",
+	"title": "Title (UPDATED)",
+	"author": "Author's nmae",
+	"publisher": "Publisher's name",
+	"numPag": 12,
+	"__v": 0
 }
 
 ```
-### Delete a livro by ID
-### Request DELETE /livros/1
-```json
-{
-  "message": "Livro removido com sucesso"
-}
+### Delete a book by ID
+### Request DELETE /book/64a9e79d5201ba804f8d508f
 
-```
 ### Response:
 
 ```json
 
 {
-  "message": "Livro removido com sucesso"
+  "message": "Book removed successfully"
 }
 ```
 
