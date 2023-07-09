@@ -18,7 +18,7 @@ export class AutorRepository {
     };
 
     static updateAutor = async (id, autorData) => {
-        return Autor.findByIdAndUpdate(id, { $set: autorData }, { new: true });
+        return Autor.findByIdAndUpdate(id, { $set: autorData }, { new: true }, { runValidators: true });
     };
 }
 
