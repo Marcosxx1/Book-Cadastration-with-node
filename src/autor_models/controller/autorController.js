@@ -1,4 +1,4 @@
-import AutorService from "../services/AutorServices.js";
+import AutorService from "../services/autorService.js";
 import errorHandler from "../../helpers/errorHandler.js";
 
 export class AutorController {

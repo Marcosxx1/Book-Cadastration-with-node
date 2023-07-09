@@ -1,12 +1,14 @@
 import express from "express";
 import livros from "../routes/livrosRoutes.js";
 
+import routerAutores from "../../autor_models/routes/autorRoutes.js";
+
 const routes = app => {
 	app.route("/").get((req, res) => {
 		res.status(200).send({ titulo: "Curso de Node" });
 	});
 
-	app.use(express.json(), livros);
+	app.use(express.json(), livros, routerAutores);
 };
 
 export default routes;
