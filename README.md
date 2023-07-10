@@ -94,12 +94,6 @@ After running *npm start* the following message should appear
 #### Every field is required, and not filling one or multiple won't allow cadastration
 
 ### API Endpoints
-#### books
-- GET /books: Get all books
-- GET /books/:id: Get a books by ID
-- POST /books: Create a new books
-- PATCH /books/:id: Update a books by ID
-- DELETE /books/:id: Delete a books by ID
 
 #### Authors
 - GET /authors: Get all authors
@@ -108,121 +102,21 @@ After running *npm start* the following message should appear
 - PATCH /authors/:id: Update an author by ID
 - DELETE /authors/:id: Delete an author by ID
 
-## Examples
+#### books
+- GET /books: Get all books
+- GET /books/:id: Get a books by ID
+- POST /books: Create a new books
+- PATCH /books/:id: Update a books by ID
+- DELETE /books/:id: Delete a books by ID
 
-### Create a new book
-### Request: POST /books
 
-```json
-
-{
-	"title": "Title ",
-	"author": "Author's name",
-	"publisher": "Publisher's name",
-	"numPag": 12,
-	"_id": "64a9e79d5201ba804f8d508f",
-	"__v": 0
-}
-
-```
-### Response
-```json
-
-{
-	"title": "Title ",
-	"author": "Author's nmae",
-	"publisher": "Publisher's name",
-	"numPag": 12,
-	"_id": "64a9e79d5201ba804f8d508f",
-	"__v": 0
-}
-
-```
-
-### Get all books
-#### Request: GET /books
-
-#### Response
-```json 
-
-[
-{
-	"title": "Title ",
-	"author": "Author's name",
-	"publisher": "Publisher's name",
-	"numPag": 12,
-	"_id": "64a9e79d5201ba804f8d508f",
-	"__v": 0
-}
-]
-
-```
-
-## Get a book by ID
-### Request GET /book/{id}
-#### GET /book/64a9e79d5201ba804f8d508f
-### Response
-
-```json
-{
-	"_id": "64a9e79d5201ba804f8d508f",
-	"title": "Title ",
-	"author": "Author's nmae",
-	"publisher": "Publisher's name",
-	"numPag": 12,
-	"__v": 0
-}
-```
-
-### Update a book by ID
-#### You can update any field, respecting the requirements
-### Requst PATCH /book/{id}
-
-### Requst PATCH /book/64a9e79d5201ba804f8d508f
-
-```json
-{
-	"_id": "64a9e79d5201ba804f8d508f",
-	"title": "Title ",
-	"author": "Author's nmae",
-	"publisher": "Publisher's name",
-	"numPag": 12,
-	"__v": 0
-}
-```
-
-### Response 
-```json 
-
-{
-	"_id": "64a9e79d5201ba804f8d508f",
-	"title": "Title (UPDATED)",
-	"author": "Author's nmae",
-	"publisher": "Publisher's name",
-	"numPag": 12,
-	"__v": 0
-}
-
-```
-### Delete a book by ID
-### Request DELETE /book/64a9e79d5201ba804f8d508f
-
-### Response:
-
-```json
-
-{
-  "message": "Book removed successfully"
-}
-```
-))))))
 ### Create a author
 ### Request: POST /authors
 
 ```json
 {
   "name": "Author's name",
-  "country": "Author's country",
+  "country": "EUA",
 }
 
 ```
@@ -230,9 +124,9 @@ After running *npm start* the following message should appear
 ```json
 
 {
-	"nome": "A",
+	"nome": "Author's name",
 	"nacionalidade": "EUA",
-	"_id": "64ac65119239788cc474a7c0"
+	"_id": "64ac6b3fad4c0c622172e6b3"
 }
 
 ```
@@ -247,7 +141,7 @@ After running *npm start* the following message should appear
 {
 	"nome": "Author's name",
 	"nacionalidade": "EUA",
-	"_id": "64ac65119239788cc474a7c0"
+	"_id": "64ac6b3fad4c0c622172e6b3"
 }
 ]
 
@@ -259,9 +153,9 @@ After running *npm start* the following message should appear
 
 ```json
 {
-	"nome": "A",
+	"nome": "Author's name",
 	"nacionalidade": "EUA",
-	"_id": "64ac65119239788cc474a7c0"
+	"_id": "64ac6b3fad4c0c622172e6b3"
 }
 ```
 
@@ -274,7 +168,7 @@ After running *npm start* the following message should appear
 {
 	"nome": "Author's name",
 	"nacionalidade": "EUA",
-	"_id": "64ac65119239788cc474a7c0"
+	"_id": "64ac6b3fad4c0c622172e6b3"
 }
 ```
 
@@ -284,7 +178,7 @@ After running *npm start* the following message should appear
 {
 	"nome": "Author's name UPDATED",
 	"nacionalidade": "EUA",
-	"_id": "64ac65119239788cc474a7c0"
+	"_id": "64ac6b3fad4c0c622172e6b3"
 }
 
 ```
@@ -297,6 +191,137 @@ After running *npm start* the following message should appear
 
 {"Author removed successfully" }
 ```
+
+## Examples
+
+### Create a new book
+### Request: POST /books
+#### To create a book, we need the author's id
+```json
+
+{
+	"title": "Title of the Book",
+	"author": "64ac65119239788cc474a7c0",
+	"publisher": "Publisher's name",
+	"numPag": 12
+}
+
+```
+### Response
+```json
+{
+	"_id": "64ac6d0c1052f07490cc2cf6",
+	"title": "Title of the Book ",
+	"author": {
+		"_id": "64ac65119239788cc474a7c0",
+		"nome": "A",
+		"nacionalidade": "EUA"
+	},
+	"publisher": "Publisher's name",
+	"numPag": 12,
+	"__v": 0
+}
+
+```
+
+### Get all books
+#### Request: GET /books
+
+#### Response
+```json 
+
+[
+{
+	"_id": "64ac6d0c1052f07490cc2cf6",
+	"title": "Title of the Book ",
+	"author": {
+		"_id": "64ac65119239788cc474a7c0",
+		"nome": "A",
+		"nacionalidade": "EUA"
+	},
+	"publisher": "Publisher's name",
+	"numPag": 12,
+	"__v": 0
+}
+]
+
+```
+
+## Get a book by ID
+### Request GET /book/{id}
+### Response
+
+```json
+{
+	"_id": "64ac6d0c1052f07490cc2cf6",
+	"title": "Title of the Book ",
+	"author": {
+		"_id": "64ac65119239788cc474a7c0",
+		"nome": "A",
+		"nacionalidade": "EUA"
+	},
+	"publisher": "Publisher's name",
+	"numPag": 12,
+	"__v": 0
+}
+
+```
+
+### Update a book by ID
+#### You can update any field, respecting the requirements
+### Requst PATCH /book/{id}
+
+### Requst PATCH /book/64a9e79d5201ba804f8d508f
+
+```json
+{
+	"_id": "64ac6d0c1052f07490cc2cf6",
+	"title": "Title of the Book ",
+	"author": {
+		"_id": "64ac65119239788cc474a7c0",
+		"nome": "A",
+		"nacionalidade": "EUA"
+	},
+	"publisher": "Publisher's name",
+	"numPag": 12,
+	"__v": 0
+}
+
+```
+
+### Response 
+```json 
+
+{
+	"_id": "64ac6d0c1052f07490cc2cf6",
+	"title": "Title of the Book UPDATED ",
+	"author": {
+		"_id": "64ac65119239788cc474a7c0",
+		"nome": "A",
+		"nacionalidade": "EUA"
+	},
+	"publisher": "Publisher's name",
+	"numPag": 12,
+	"__v": 0
+}
+
+
+```
+### Delete a book by ID
+### Request DELETE /book/64a9e79d5201ba804f8d508f
+
+### Response:
+
+```json
+
+{
+  "message": "Book removed successfully"
+}
+```
+
+
+
+
 ## Next steps:
 
 ### - Use Typescript
