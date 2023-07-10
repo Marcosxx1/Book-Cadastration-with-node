@@ -183,7 +183,7 @@ After running *npm start* the following message should appear
 
 ```
 ### Delete author by ID
-### Request DELETE /authors/64ac65119239788cc474a7c0
+### Request DELETE /authors/{id}
 
 ### Response:
 
@@ -271,8 +271,6 @@ After running *npm start* the following message should appear
 #### You can update any field, respecting the requirements
 ### Requst PATCH /book/{id}
 
-### Requst PATCH /book/64a9e79d5201ba804f8d508f
-
 ```json
 {
 	"_id": "64ac6d0c1052f07490cc2cf6",
@@ -308,7 +306,7 @@ After running *npm start* the following message should appear
 
 ```
 ### Delete a book by ID
-### Request DELETE /book/64a9e79d5201ba804f8d508f
+### Request DELETE /book/{id}
 
 ### Response:
 
