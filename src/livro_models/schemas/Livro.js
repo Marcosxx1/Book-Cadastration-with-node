@@ -1,19 +1,15 @@
 import mongoose from "mongoose";
 
+
 const livroSchema = new mongoose.Schema({
-	id: { type: String },
 	title: { type: String, required: true },
-	author: { type: String, required: true },
-	publisher: { type: String, required: true },
-	numPag: { type: Number, min: 1, max: 3000, required: true },
-	titulo: { type: String, required: true },
-	autor: {
+	author: {
 		type: mongoose.Schema.Types.ObjectId,
-		ref: "autores",
+		ref: "Autor",
 		required: true,
 	},
-	editora: { type: String, required: true },
-	numPagina: { type: Number, min: 1, max: 3000 },
+	publisher: { type: String, required: true },
+	numPag: { type: Number, min: 1, max: 3000 },
 });
 
 const Livro = mongoose.model("Livro", livroSchema);

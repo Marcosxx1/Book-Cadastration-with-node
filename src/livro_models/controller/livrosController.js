@@ -15,7 +15,7 @@ export class LivroController {
 		try {
 			const livroEncontrado = await LivroService.getLivroById(req.params.id);
 			if (livroEncontrado) {
-				res.status(200).json(livroEncontrado);
+				res.status(200).json(livroEncontrado).populate("author");
 			} else {
 				res.status(400).json({ error: "Book not found" });
 			}

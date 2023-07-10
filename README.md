@@ -6,15 +6,26 @@ This is a sample Node.js Express API project that uses MongoDB for data storage.
 <summary>FileTree</summary>
 
 ```coffeescript
-Node.js-API-Rest-com-Express-e-MongoDB-/
+Book-Cadastration-with-node/
 ┣ .vscode/
 ┃ ┗ settings.json
 ┣ src/
+┃ ┣ autor_models/
+┃ ┃ ┣ controller/
+┃ ┃ ┃ ┗ autorController.js
+┃ ┃ ┣ repository/
+┃ ┃ ┃ ┗ autorRepository.js
+┃ ┃ ┣ routes/
+┃ ┃ ┃ ┗ autorRoutes.js
+┃ ┃ ┣ schema/
+┃ ┃ ┃ ┗ Autor.js
+┃ ┃ ┗ services/
+┃ ┃   ┗ autorService.js
 ┃ ┣ config/
 ┃ ┃ ┗ dbConnect.js
 ┃ ┣ helpers/
 ┃ ┃ ┗ errorHandler.js
-┃ ┣ models/
+┃ ┣ livro_models/
 ┃ ┃ ┣ controller/
 ┃ ┃ ┃ ┗ livrosController.js
 ┃ ┃ ┣ repository/
