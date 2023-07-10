@@ -299,7 +299,7 @@ After running *npm start* the following message should appear
 ```
 ## Next steps:
 
-### Use Typescript
+### - Use Typescript
 
 ### - Implement better relations
 #### Even tough mongoDB is a NoSQL database, currently on my project is possible do delete authors associated with books
@@ -310,6 +310,8 @@ After running *npm start* the following message should appear
 ### - More 'day-to-day' functionalities
 #### This project exceeded my expectations, and I would like to further improve it
 
+### - Stick with one language
+#### I started the project in portuguese, and then gradually changed to english, this proved to be challenging to mantain and confusing.
 <details><summary>Contribution?</summary>
 You're wellcome to contribute!
 </details>
