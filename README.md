@@ -94,11 +94,19 @@ After running *npm start* the following message should appear
 #### Every field is required, and not filling one or multiple won't allow cadastration
 
 ### API Endpoints
+#### books
 - GET /books: Get all books
 - GET /books/:id: Get a books by ID
 - POST /books: Create a new books
 - PATCH /books/:id: Update a books by ID
 - DELETE /books/:id: Delete a books by ID
+
+#### Authors
+- GET /authors: Get all authors
+- GET /authors/:id: Get an author by ID
+- POST /authors: Create a new author
+- PATCH /authors/:id: Update an author by ID
+- DELETE /authors/:id: Delete an author by ID
 
 ## Examples
 
@@ -207,7 +215,101 @@ After running *npm start* the following message should appear
   "message": "Book removed successfully"
 }
 ```
+))))))
+### Create a author
+### Request: POST /authors
+
+```json
+{
+  "name": "Author's name",
+  "country": "Author's country",
+}
+
+```
+### Response
+```json
+
+{
+	"nome": "A",
+	"nacionalidade": "EUA",
+	"_id": "64ac65119239788cc474a7c0"
+}
+
+```
+
+### Get all authors
+#### Request: GET /authors
+
+#### Response
+```json 
+
+[
+{
+	"nome": "Author's name",
+	"nacionalidade": "EUA",
+	"_id": "64ac65119239788cc474a7c0"
+}
+]
+
+```
+
+## Get a author by id
+### Request GET /authors/{id}
+### Response
+
+```json
+{
+	"nome": "A",
+	"nacionalidade": "EUA",
+	"_id": "64ac65119239788cc474a7c0"
+}
+```
+
+### Update a by ID
+#### You can update any field, respecting the requirements
+### Requst PATCH /authors/{id}
+
+
+```json
+{
+	"nome": "Author's name",
+	"nacionalidade": "EUA",
+	"_id": "64ac65119239788cc474a7c0"
+}
+```
+
+### Response 
+```json 
+
+{
+	"nome": "Author's name UPDATED",
+	"nacionalidade": "EUA",
+	"_id": "64ac65119239788cc474a7c0"
+}
+
+```
+### Delete author by ID
+### Request DELETE /authors/64ac65119239788cc474a7c0
+
+### Response:
+
+```json
+
+{"Author removed successfully" }
+```
+## Next steps:
+
+### Use Typescript
+
+### - Implement better relations
+#### Even tough mongoDB is a NoSQL database, currently on my project is possible do delete authors associated with books
+
+### - Implement more scalable design
+#### This project showed me my current understanding of Node.js and made clear that I know the basics and architectural pattern using the Model, Services, and Repository. Next step is to implement S.O.L.I.D where it is needed
+
+### - More 'day-to-day' functionalities
+#### This project exceeded my expectations, and I would like to further improve it
 
 <details><summary>Contribution?</summary>
-You're wellcome!
+You're wellcome to contribute!
 </details>
