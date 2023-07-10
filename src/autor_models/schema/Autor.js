@@ -5,7 +5,11 @@ const autorSchema = new mongoose.Schema(
     {
         id: { type: String, },
         nome: {
-            type: String, required: true, maxlength: 50, validate: {
+            type: String,
+            required: true,
+            unique: true,
+            maxlength: 50,
+            validate: {
                 validator: function (v) {
                     return !/\d/.test(v);
                 },
@@ -13,7 +17,9 @@ const autorSchema = new mongoose.Schema(
             }
         },
         nacionalidade: {
-            type: String, required: true, validate: {
+            type: String,
+            required: true,
+            validate: {
                 validator: function (v) {
                     return !/\d/.test(v);
                 },

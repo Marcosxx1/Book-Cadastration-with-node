@@ -14,8 +14,19 @@ export class AutorService {
     };
 
     static createAutor = async autorData => {
-        return AutorRepository.createAutor(autorData);
+        try {
+            return await AutorRepository.createAutor(autorData);
+        } catch (error) {
+            if (error.name === 'MongoError' || error.code === 11000) {
+                throw new Error('A record with this name already exists');
+            } else if (error.name === 'ValidationError') {
+                throw new Error(error.message);
+            } else {
+                throw error;
+            }
+        }
     };
+
 
     static deleteAutor = async id => {
         const autorRemovido = await AutorRepository.deleteAutor(id);
